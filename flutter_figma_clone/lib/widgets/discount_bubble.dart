@@ -11,8 +11,10 @@ class DiscountBubble extends StatelessWidget {
       padding: EdgeInsets.all(6),
       width: 40,
       height: 24,
-      color: Colors.red,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(29)),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(29),
+        color: Colors.red,
+      ),
       child: CardText(
         text: discountText,
         textSize: 11,

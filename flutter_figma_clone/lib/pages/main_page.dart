@@ -14,12 +14,13 @@ class MainPage extends StatelessWidget {
           SmallBanner(),
           const SizedBox(height: 40),
           Headers(headerTitle: "Sale", headerDescription: "Super summer sale"),
+          const SizedBox(height: 22),
           SalesBlock(),
-          // const SizedBox(height: 40),
-          // Headers(
-          //   headerTitle: "New",
-          //   headerDescription: "You've never seen it before!",
-          // ),
+          const SizedBox(height: 40),
+          Headers(
+            headerTitle: "New",
+            headerDescription: "You've never seen it before!",
+          ),
         ],
       ),
     );

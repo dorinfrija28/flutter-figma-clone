@@ -15,14 +15,19 @@ class CardImage extends StatelessWidget {
     return Stack(
       alignment: Alignment.topLeft,
       children: [
-        Container(
-          width: 148,
-          height: 184,
-          color: const Color.fromARGB(255, 75, 74, 74),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            imagePath,
+            width: 148,
+            height: 184,
+            fit: BoxFit.cover,
+          ),
         ),
-        //Image.asset(imagePath, width: 148, height: 184, fit: BoxFit.cover),
-        DiscountBubble(discountText: discountText),
+        Padding(
+          padding: const EdgeInsets.only(top: 8, left: 8),
+          child: DiscountBubble(discountText: discountText),
+        ),
       ],
     );
   }

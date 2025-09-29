@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_figma_clone/widgets/card_image.dart';
-import 'package:flutter_figma_clone/widgets/star_rating.dart';
+import 'package:flutter_figma_clone/widgets/full_card.dart';
 
 class SalesBlock extends StatelessWidget {
   const SalesBlock({super.key});
@@ -9,53 +8,54 @@ class SalesBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     final products = [
       {
-        "image": "",
-        "title": "First",
-        "description": "First",
-        "price": 100,
-        "discountPrice": 75,
-        "discount": 25,
+        "image": "assets/sales/1.png",
+        "title": "Evening Dress",
+        "description": "Dorothy Perkins",
+        "price": 15,
+        "discountPrice": 12,
+        "discount": 20,
         "reviews": 10,
       },
       {
-        "image": "",
-        "title": "Second",
-        "description": "Second",
-        "price": 100,
-        "discountPrice": 75,
-        "discount": 25,
+        "image": "assets/sales/2.png",
+        "title": "Sport Dress",
+        "description": "Sitlly",
+        "price": 22,
+        "discountPrice": 19,
+        "discount": 15,
         "reviews": 10,
       },
       {
-        "image": "",
-        "title": "Third",
-        "description": "Third",
-        "price": 100,
-        "discountPrice": 75,
-        "discount": 25,
+        "image": "assets/sales/3.png",
+        "title": "Sport Dress",
+        "description": "Dorothy Perkins",
+        "price": 14,
+        "discountPrice": 12,
+        "discount": 20,
         "reviews": 10,
       },
     ];
 
-    return ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      itemCount: products.length,
-      itemBuilder: (context, index) {
-        final product = products[index];
-        return Column(
-          children: [
-            CardImage(
-              imagePath: 'imagePath',
+    return SizedBox(
+      height: 260,
+      child: PageView.builder(
+        padEnds: false,
+        controller: PageController(viewportFraction: 0.4),
+        itemCount: products.length,
+        itemBuilder: (context, index) {
+          final product = products[index];
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: FullCard(
+              imagePath: "${product["image"]}",
               discountText: "-${product["discount"]}%",
-            ),
-            StarRating(
-              starSize: 14,
-              starSpacing: 2,
               starReview: "(${product["reviews"]})",
+              descriptionText: "${product["description"]}",
+              titleText: "${product["title"]}",
             ),
-          ],
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
