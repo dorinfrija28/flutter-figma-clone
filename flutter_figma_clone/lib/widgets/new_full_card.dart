@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_figma_clone/widgets/card_image.dart';
 import 'package:flutter_figma_clone/widgets/card_text.dart';
-import 'package:flutter_figma_clone/widgets/like_button.dart';
-import 'package:flutter_figma_clone/widgets/star_rating.dart';
+import 'package:flutter_figma_clone/widgets/new_card_image.dart';
+import 'package:flutter_figma_clone/widgets/new_star_rating.dart';
 
-class FullCard extends StatelessWidget {
+class NewFullCard extends StatelessWidget {
   final String imagePath;
-  final String discountText;
   final String starReview;
   final String descriptionText;
   final String titleText;
-  const FullCard({
+  const NewFullCard({
     super.key,
     required this.imagePath,
-    required this.discountText,
     required this.starReview,
     required this.descriptionText,
     required this.titleText,
@@ -27,15 +24,9 @@ class FullCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Stack(
-            clipBehavior: Clip.none,
-            children: [
-              CardImage(imagePath: imagePath, discountText: discountText),
-              Positioned(bottom: -17, right: 0, child: LikeButton()),
-            ],
-          ),
+          NewCardImage(imagePath: imagePath),
           const SizedBox(height: 5),
-          StarRating(starSize: 12, starSpacing: 1, starReview: starReview),
+          NewStarRating(starSize: 16, starSpacing: 1, starReview: starReview),
           const SizedBox(height: 6),
           CardText(
             text: descriptionText,
