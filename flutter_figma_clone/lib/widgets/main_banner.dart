@@ -15,7 +15,7 @@ class SmallBanner extends StatelessWidget {
         ),
 
         Padding(
-          padding: const EdgeInsets.only(left: 16, bottom: 26),
+          padding: const EdgeInsets.only(left: 16, bottom: 20),
           child: Text(
             "Street clothes",
             style: TextStyle(

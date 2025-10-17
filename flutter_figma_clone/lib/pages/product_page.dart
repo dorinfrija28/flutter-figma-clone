@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_figma_clone/widgets/details_header.dart';
 import 'package:flutter_figma_clone/widgets/header_product.dart';
+import 'package:flutter_figma_clone/widgets/prodcut_carousel.dart';
 import 'package:flutter_figma_clone/widgets/product_button.dart';
+import 'package:flutter_figma_clone/widgets/product_cards.dart';
+import 'package:flutter_figma_clone/widgets/product_dropdown_buttons.dart';
 import 'package:flutter_figma_clone/widgets/product_navbar.dart';
 import 'package:flutter_figma_clone/widgets/star_rating.dart';
 
@@ -20,6 +23,10 @@ class ProductPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            ProductCarousel(),
+            const SizedBox(height: 22),
+            ProductDropdownButtons(),
+            const SizedBox(height: 22),
             HeaderProduct(),
             const SizedBox(height: 6),
             Padding(
@@ -47,6 +54,9 @@ class ProductPage extends StatelessWidget {
             Divider(height: 1, color: Colors.grey),
             const SizedBox(height: 24),
             DetailsHeader(),
+            const SizedBox(height: 12),
+            ProductCards(),
+            const SizedBox(height: 40),
           ],
         ),
       ),

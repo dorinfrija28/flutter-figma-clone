@@ -12,6 +12,8 @@ class FullCard extends StatelessWidget {
   final String starReview;
   final String descriptionText;
   final String titleText;
+  final String price;
+  final String discountPrice;
   const FullCard({
     super.key,
     required this.imagePath,
@@ -19,6 +21,8 @@ class FullCard extends StatelessWidget {
     required this.starReview,
     required this.descriptionText,
     required this.titleText,
+    required this.price,
+    required this.discountPrice
   });
 
   @override
@@ -55,6 +59,25 @@ class FullCard extends StatelessWidget {
               textSize: 16,
               textColor: Colors.black,
               textWeight: FontWeight.w400,
+            ),
+            const SizedBox(height: 3),
+            Row(
+              children: [
+                CardText(
+                  text: price,
+                  textSize: 14,
+                  textColor: Colors.grey,
+                  textWeight: FontWeight.w500,
+                  linethrought: TextDecoration.lineThrough,
+                ),
+                const SizedBox(width: 2,),
+                CardText(
+                  text: discountPrice,
+                  textSize: 14,
+                  textColor: Colors.red,
+                  textWeight: FontWeight.w500,
+                ),
+              ],
             ),
           ],
         ),

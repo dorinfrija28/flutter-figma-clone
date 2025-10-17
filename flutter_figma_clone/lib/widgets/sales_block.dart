@@ -37,7 +37,7 @@ class SalesBlock extends StatelessWidget {
     ];
 
     return SizedBox(
-      height: 260,
+      height: 280,
       child: PageView.builder(
         padEnds: false,
         controller: PageController(viewportFraction: 0.4),
@@ -52,6 +52,8 @@ class SalesBlock extends StatelessWidget {
               starReview: "(${product["reviews"]})",
               descriptionText: "${product["description"]}",
               titleText: "${product["title"]}",
+              price: "${product["price"]}\$",
+              discountPrice: "${product["discountPrice"]}\$",
             ),
           );
         },

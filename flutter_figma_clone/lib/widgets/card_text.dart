@@ -5,6 +5,7 @@ class CardText extends StatelessWidget {
   final double textSize;
   final Color textColor;
   final FontWeight textWeight;
+  final TextDecoration? linethrought;
 
   const CardText({
     super.key,
@@ -12,6 +13,7 @@ class CardText extends StatelessWidget {
     required this.textSize,
     required this.textColor,
     required this.textWeight,
+    this.linethrought,
   });
 
   @override
@@ -23,6 +25,7 @@ class CardText extends StatelessWidget {
         color: textColor,
         fontWeight: textWeight,
         fontFamily: 'Metropolis',
+        decoration: linethrought,
       ),
     );
   }

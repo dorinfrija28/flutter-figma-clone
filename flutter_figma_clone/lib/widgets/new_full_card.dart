@@ -11,12 +11,14 @@ class NewFullCard extends StatelessWidget {
   final String starReview;
   final String descriptionText;
   final String titleText;
+  final String price;
   const NewFullCard({
     super.key,
     required this.imagePath,
     required this.starReview,
     required this.descriptionText,
     required this.titleText,
+    required this.price
   });
 
   @override
@@ -53,6 +55,13 @@ class NewFullCard extends StatelessWidget {
               textSize: 16,
               textColor: Colors.black,
               textWeight: FontWeight.w400,
+            ),
+            const SizedBox(height: 3),
+            CardText(
+              text: price,
+              textSize: 14,
+              textColor: Colors.black,
+              textWeight: FontWeight.w500,
             ),
           ],
         ),
